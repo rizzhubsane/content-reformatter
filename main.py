@@ -247,7 +247,7 @@ st.markdown('<div class="main-container">', unsafe_allow_html=True)
 # Hero section
 st.markdown("""
 <div class="hero">
-    <h1>✨✨Content Reformatter✨✨</h1>
+    <h1>🌌 Cosmic Writer</h1>
     <p>Transform your content across the digital universe. One article, multiple platforms, infinite possibilities.</p>
 </div>
 """, unsafe_allow_html=True)
@@ -262,14 +262,14 @@ st.markdown("""
 master_article = st.text_area(
     "",
     height=300,
-    placeholder="Paste your master article here...\n\nThis is where your content journey begins. Write or paste your article, and watch as it transforms for different platforms.",
+    placeholder="Paste your master article here...\n\nThis is where your content journey begins. Write or paste your article, and watch as it transforms for different platforms across the digital cosmos.",
     help="Enter your original article content that will be reformatted for different platforms"
 )
 
 # Platform selection section
 st.markdown("""
 <div class="section">
-    <h2> Platforms</h2>
+    <h2>🚀 Launch Platforms</h2>
 </div>
 """, unsafe_allow_html=True)
 
@@ -277,7 +277,7 @@ platforms = ["Medium", "Substack", "Dev.to", "Ko-fi"]
 selected_platforms = st.multiselect(
     "",
     platforms,
-    placeholder="Choose your Platforms...",
+    placeholder="Choose your destinations...",
     help="Select which platforms you want to optimize your content for"
 )
 
