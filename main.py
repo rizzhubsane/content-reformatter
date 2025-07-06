@@ -247,7 +247,7 @@ st.markdown('<div class="main-container">', unsafe_allow_html=True)
 # Hero section
 st.markdown("""
 <div class="hero">
-    <h1>🌌 Cosmic Writer</h1>
+    <h1>✨✨ Cosmic Writer✨✨</h1>
     <p>Transform your content across the digital universe. One article, multiple platforms, infinite possibilities.</p>
 </div>
 """, unsafe_allow_html=True)
