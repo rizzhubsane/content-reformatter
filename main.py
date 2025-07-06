@@ -649,4 +649,117 @@ if selected_platforms:
             🎯 LOCKED TARGETS: {platform_display}
         </p>
         <p style="color: #888; margin: 0.5rem 0 0 0; font-size: 0.9rem;">
-            Neural pathways established • Quantum entanglement initiate
+            Neural pathways established • Quantum entanglement initiated
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+# Enhanced generate button
+st.markdown("<br><br>", unsafe_allow_html=True)
+
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2:
+    generate_clicked = st.button(
+        "⚡ INITIATE QUANTUM TRANSFORMATION",
+        use_container_width=True,
+        help="Activate neural processing matrix"
+    )
+
+# Generation logic with enhanced loading
+if generate_clicked and master_article and selected_platforms:
+    # Custom loading animation
+    st.markdown("""
+    <div class="loading-container">
+        <div class="loading-text">🌌 QUANTUM PROCESSING INITIATED</div>
+        <div class="loading-orb"></div>
+        <p style="color: #888; font-family: 'Orbitron', monospace; margin-top: 1rem;">
+            Neural networks analyzing • Dimensional portals opening • Content matrix transforming
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Simulate processing time for better UX
+    progress_bar = st.progress(0)
+    for i in range(100):
+        time.sleep(0.01)  # Very brief delay for visual effect
+        progress_bar.progress(i + 1)
+    
+    with st.spinner("Quantum transformation in progress..."):
+        outputs = generate_platform_outputs(master_article, selected_platforms)
+    
+    progress_bar.empty()
+    
+    # Enhanced success message
+    st.markdown("""
+    <div style="text-align: center; margin: 2rem 0;">
+        <div style="font-family: 'Orbitron', monospace; font-size: 1.5rem; color: var(--primary); margin-bottom: 1rem; animation: successGlow 2s ease-out;">
+            ✨ QUANTUM TRANSFORMATION COMPLETE
+        </div>
+        <p style="color: #888; font-size: 1.1rem;">
+            Your content has been successfully manifested across selected dimensional platforms
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Output section with enhanced styling
+    st.markdown("""
+    <div class="section">
+        <h2>🔬 Quantum Manifestations</h2>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Display outputs with enhanced cards
+    for i, (platform, content) in enumerate(outputs.items()):
+        # Platform icons with enhanced styling
+        icons = {
+            "Medium": "📖",
+            "Substack": "📧", 
+            "Dev.to": "👨‍💻",
+            "Ko-fi": "☕"
+        }
+        
+        # Add delay for staggered animation
+        st.markdown(f"""
+        <div class="output-card" style="animation-delay: {i * 0.2}s;">
+            <h3>{icons.get(platform, "🌟")} {platform} Manifestation</h3>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Enhanced content display
+        st.code(content, language='markdown')
+        
+        # Quantum download buttons
+        col1, col2, col3 = st.columns([1, 1, 2])
+        with col1:
+            st.download_button(
+                label=f"⬇️ Extract {platform}",
+                data=content,
+                file_name=f"{platform.lower().replace('.', '')}_quantum.md",
+                mime="text/markdown",
+                key=f"quantum_download_{platform}"
+            )
+
+elif generate_clicked:
+    if not master_article:
+        st.error("🧠 Neural interface requires input! Connect your consciousness to the quantum field.")
+    elif not selected_platforms:
+        st.error("🎯 Dimensional targets required! Select at least one platform for manifestation.")
+
+# Enhanced footer with quantum branding
+st.markdown("""
+<div style="text-align: center; margin-top: 5rem; padding: 3rem; border-top: 1px solid rgba(0, 255, 240, 0.3); position: relative;">
+    <div style="font-family: 'Orbitron', monospace; font-size: 1.2rem; color: var(--primary); margin-bottom: 1rem;">
+        NEURAL FORGE v2.0
+    </div>
+    <p style="color: #666; font-size: 0.9rem; margin-bottom: 0;">
+        Powered by quantum neural networks • Crafted for digital pioneers exploring infinite creative dimensions
+    </p>
+    <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+        <span style="color: var(--primary); font-size: 0.8rem; font-family: 'Orbitron', monospace;">🔮 QUANTUM READY</span>
+        <span style="color: var(--secondary); font-size: 0.8rem; font-family: 'Orbitron', monospace;">⚡ NEURAL ENHANCED</span>
+        <span style="color: var(--accent); font-size: 0.8rem; font-family: 'Orbitron', monospace;">🌌 DIMENSION OPTIMIZED</span>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown('</div>', unsafe_allow_html=True)
